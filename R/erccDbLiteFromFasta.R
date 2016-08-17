@@ -2,8 +2,11 @@
 #' NOTE: we probably shouldn't even bother exporting this.
 #' If ERCC spike-ins change radically, we'll need to build an entirely new one.
 #'
-#' @import Rsamtools
-#'
+#' @importFrom Rsamtools indexFa
+#' @importFrom Rsamtools scanFaIndex
+#' @importFrom Rsamtools scanFa
+#' @param fastaFile a fasta file containing ERCC sequence information
+#' @param verbose boolean if true will print process messages 
 #' @export
 erccDbLiteFromFasta <- function(fastaFile, verbose=TRUE) { 
 

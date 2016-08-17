@@ -7,13 +7,11 @@
 #' 
 #' @import GenomicRanges
 #' @import OrganismDbi
-#' @import Biostrings
+#' @importFrom Rsamtools indexFa scanFaIndex scanFa
 #' 
 #' @export
 ensDbLiteFromFasta <- function(fastaFile, verbose=TRUE){#{{{
 
-  require(Biostrings) 
-  require(GenomicRanges)
   options(useFancyQuotes=FALSE)
   options(stringsAsFactors=FALSE)
 
@@ -250,7 +248,7 @@ getEntrezIDs <- function(gxs, organism) { # {{{
 #' 
 #' add symbols for Ensembl genes
 #'
-#' @param gxs       a GRanges of genes
+#' 
 #' 
 #' @return  symbols for the genes, where found 
 #'
